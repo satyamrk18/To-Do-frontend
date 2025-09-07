@@ -40,3 +40,10 @@
   color:white;
   cursor:pointer;
 }
+.floating-box
+{
+  position:fixed;
+  top:-10px;
+  height:auto;
+  width:fit-content;
+}

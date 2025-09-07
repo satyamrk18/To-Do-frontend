@@ -1,21 +1,13 @@
-import { useState } from "react";
 import AddToDo from "../AddTodo.jsx";
 import "./addtodoBox.css";
-const addTodoBox = () => {
-  const [display, setDisplay] = useState("block");
+
+const AddToDoBox = ({ onClose }) => {
   return (
-    <div className="addToDoBox" style={{ display: `${display}` }}>
-      <p
-        className="cancel-btn"
-        onClick={() => {
-          setDisplay("none")
-          window.location.reload();
-        }}
-      >
-        X
-      </p>
+    <div className="addToDoBox">
+      <p className="cancel-btn" onClick={onClose}>X</p>
       <AddToDo />
     </div>
   );
 };
-export default addTodoBox;
+
+export default AddToDoBox;

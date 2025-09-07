@@ -1,14 +1,21 @@
 .addToDoBox {
   position: relative;
+
 }
 .cancel-btn {
-  position: absolute;
-  right: 0px;
-  background-color: red;
-  border:none;
+  background-color:red;
+  width:25px;
+  height:25px;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  right:10px;
+  top:25px;
   color:white;
-  height:30px;
-  width:30px;
-  font-size:18px;
-  font-weight:600;
+  cursor:pointer;
+  z-index:1;
+  border-radius:50%;
+  padding:5px;
 }

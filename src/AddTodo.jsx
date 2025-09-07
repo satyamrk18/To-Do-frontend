@@ -10,28 +10,30 @@ const AddTodo = () => {
   });
   const [emojiPickerOPen, setEmojiPickerOpen] = useState(false);
 
-const saveTodo = async ()=>
-{
- const submit = await axios.post(`${import.meta.env.VITE_BASE_URL}/addTodos`,todos);
- if(submit)
- {
-  alert(submit.data.message);
-  window.location.href="/"
- }
-}
+  const saveTodo = async () => {
+    const submit = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/addTodos`,
+      todos
+    );
+    if (submit) {
+      alert(submit.data.message);
+      window.location.href = "/";
+    }
+  };
   return (
     <div className="form-container">
-      <div>
-        <h1>Add To Do</h1>
+      <h1>Add To Do</h1>
+      <div className="input-form">
         <input
           type="text"
           placeholder="enter a task"
+          className="inputs"
           value={todos.toIteam}
           onChange={(e) => {
             setTodos({ ...todos, toIteam: e.target.value });
           }}
         />
-        <select
+        <select className="inputs"
           onChange={(e) => {
             setTodos({ ...todos, priority: e.target.value });
           }}
@@ -46,18 +48,30 @@ const saveTodo = async ()=>
             setEmojiPickerOpen(!emojiPickerOPen);
           }}
         >
-          emoji
+          emoji {todos.emoji}
         </button>
         {/* emoji picker */}
-        <EmojiPicker
-          onEmojiClick={({ emoji }) => {
-            setTodos({ ...todos, emoji: emoji });
-            setEmojiPickerOpen(false)
-          }}
-          open={emojiPickerOPen}
-        />
+        <div className="input-emoji">
+          <EmojiPicker className="emoji-container"
+          height={350}
+          width={`70%`}
+            onEmojiClick={({ emoji }) => {
+              setTodos({ ...todos, emoji: emoji });
+              setEmojiPickerOpen(false);
+            }}
+            open={emojiPickerOPen}
+          />
+          
+        </div>
         {/*submit button*/}
-        <button type="button" onClick={()=>{saveTodo()}}>Save To DO</button>
+        <button
+          type="button"
+          onClick={() => {
+            saveTodo();
+          }}
+        >
+          Save To DO
+        </button>
       </div>
     </div>
   );

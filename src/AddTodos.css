@@ -1,8 +1,58 @@
-.form-container
+.form-container {
+  border: 2px solid green;
+  border-top: 35px solid rgba(0, 128, 0, 0.865);
+  height: auto;
+  width: max-content;
+  padding: 25px;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 10px;
+  background-color:white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+}
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+  overflow-y:hidden;
+}
+button {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: rgb(196, 235, 196);
+  border: 2px solid green;
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+}
+button:active {
+  background-color: green;
+  color: white;
+  border: 2px solid white;
+}
+.input-emoji {
+  display: flex;
+  flex-direction: row;
+}
+.inputs {
+  margin: 0 auto;
+  width: 70%;
+  padding: 5px;
+  border:1px solid green;
+  border-radius:5px;
+  font-weight:400;
+}
+.emoji-container
 {
-    border:2px solid black;
-    height:auto;
-    width:max-content;
-    padding:25px;
-    margin:50px auto;
+margin:0 auto;
 }
