@@ -1,3 +1,12 @@
+.container
+{
+  width:100%;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
 .cards{
   margin:50 auto;
   border:2px solid black;
@@ -6,6 +15,12 @@
   flex-direction:column;
   align-items:center;
   height:auto;
+}
+
+.add-title
+{
+  border:2px solid black;
+  padding:20px;
 }
 .todo-done
 {

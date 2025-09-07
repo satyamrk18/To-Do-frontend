@@ -1,28 +1,47 @@
 import { useState, useEffect } from "react";
 import EmojiPicker from "emoji-picker-react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./AddTodos.css";
-const AddTodo = () => {
+const Edit = () => {
   const [todos, setTodos] = useState({
     toIteam: "",
     priority: "Low",
     emoji: "❤️‍🔥",
+    isDone:false,
   });
   const [emojiPickerOPen, setEmojiPickerOpen] = useState(false);
+  const { id } = useParams();
 
-const saveTodo = async ()=>
+//to load the existing detail of the to do item for edit
+const loadTodo = async ()=>
 {
- const submit = await axios.post(`${import.meta.env.VITE_BASE_URL}/addTodos`,todos);
- if(submit)
- {
-  alert(submit.data.message);
-  window.location.href="/"
- }
+    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/todos/${id}`);
+    const idData = response.data.data;
+    setTodos({
+        toIteam:idData.toIteam,
+        priority:idData.priority,
+        emoji:idData.emoji,
+        isDone:idData.isDone
+    })
 }
+useEffect(()=>{loadTodo()},[id])
+
+//saving the data
+  const saveTodo = async () => {
+    const submit = await axios.put(
+      `${import.meta.env.VITE_BASE_URL}/todos/${id}`,
+      todos
+    );
+    if (submit) {
+      alert(submit.data.message);
+      window.location.href = "/";
+    }
+  };
   return (
     <div className="form-container">
       <div>
-        <h1>Add To Do</h1>
+        <h1>Edit To Do : {id}</h1>
         <input
           type="text"
           placeholder="enter a task"
@@ -52,14 +71,21 @@ const saveTodo = async ()=>
         <EmojiPicker
           onEmojiClick={({ emoji }) => {
             setTodos({ ...todos, emoji: emoji });
-            setEmojiPickerOpen(false)
+            setEmojiPickerOpen(false);
           }}
           open={emojiPickerOPen}
         />
         {/*submit button*/}
-        <button type="button" onClick={()=>{saveTodo()}}>Save To DO</button>
+        <button
+          type="button"
+          onClick={() => {
+            saveTodo();
+          }}
+        >
+          Update To DO
+        </button>
       </div>
     </div>
   );
 };
-export default AddTodo;
+export default Edit;
