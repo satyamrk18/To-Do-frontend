@@ -1,0 +1,5 @@
+- [x] Update Home.jsx: Add onClose callback to set addToDoDisplay to "none", pass to AddToDoBox
+- [x] Update addtodoBox.jsx: Accept onClose prop, call it on cancel button click
+- [x] Update AddTodo.jsx: Fix typo "Hign" to "High", add onSave prop to close without reload
+- [ ] Test the add todo form functionality
+- [ ] Test the add todo form functionality

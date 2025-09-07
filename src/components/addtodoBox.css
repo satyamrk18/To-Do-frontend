@@ -1,9 +1,14 @@
-.addToDoBox
-{
-    border:2px solid red;
-    position:relative;
+.addToDoBox {
+  position: relative;
 }
-.cancel-btn{
-    display:absolute;
-    right:0px;
+.cancel-btn {
+  position: absolute;
+  right: 0px;
+  background-color: red;
+  border:none;
+  color:white;
+  height:30px;
+  width:30px;
+  font-size:18px;
+  font-weight:600;
 }

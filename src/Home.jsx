@@ -75,4 +75,3 @@ const loadTodos = async () => {
 }
 
 export default Home;
-  
