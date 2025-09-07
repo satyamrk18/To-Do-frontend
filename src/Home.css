@@ -1,3 +1,7 @@
+body{
+  margin:0;
+  padding:0;
+}
 .container
 {
   width:100%;
@@ -10,11 +14,12 @@
 .cards{
   margin:50 auto;
   border:2px solid black;
-  padding:25px;
+  padding:15px;
   display:flex;
   flex-direction:column;
   align-items:center;
   height:auto;
+  width:90vw;
 }
 
 .add-title
