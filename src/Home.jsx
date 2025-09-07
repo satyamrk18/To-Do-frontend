@@ -46,7 +46,7 @@ function Home() {
         {showAddToDo && <AddToDoBox onClose={() => setShowAddToDo(false)} />}
       </div>
 
-      <div>
+      <div className="card-container">
         {todos.map((todoItem) => {
           const { id, toIteam, priority, emoji, isDone, createdDate } =
             todoItem;
@@ -54,12 +54,15 @@ function Home() {
             <div className="cards" key={id}>
               <details>
                 <summary>
-                  <h2 className={isDone ? "todo-done" : ""}>
-                    {`${id}]`} {toIteam}
-                  </h2>
-                  <h3>priority = {priority}</h3>
-                  <h3>emoji = {emoji}</h3>
+                  <div className="summary-display">
+                    <h2 className={isDone ? "todo-done" : ""}>
+                      {`${id}]`} {toIteam}{emoji}
+                    </h2>
+                    <h3>priority = {priority}</h3>
+                    <h3 className="see-task-btn">see task</h3>
+                  </div>
                 </summary>
+
                 <h3>
                   Created Date {createdDate.replace("T", " ").slice(0, 16)}
                 </h3>

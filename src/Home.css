@@ -8,20 +8,27 @@ body{
   height:auto;
   display:flex;
   align-items:center;
-  justify-content:center;
+justify-content:center;
   flex-direction:column;
 }
 .cards{
   margin:50 auto;
   border:2px solid black;
-  padding:15px;
+  padding:5px;
+  border-radius:10px;
   display:flex;
   flex-direction:column;
   align-items:center;
   height:auto;
   width:90vw;
+ }
+.card-container
+{
+display:flex;
+flex-direction:column;
+align-content:center;
+gap:25PX;
 }
-
 .add-title
 {
   border:2px solid black;
@@ -51,4 +58,26 @@ body{
   top:-10px;
   height:auto;
   width:fit-content;
+}
+summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.summary-display {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width:70vw;
+  flex: 1; 
+}
+
+.see-task-btn
+{
+  border:1px solid black;
+  height:20PX;
+  width:fit-content;
+  padding:6px;
+  border-radius:10px;
 }
