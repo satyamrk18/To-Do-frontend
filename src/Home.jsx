@@ -48,7 +48,7 @@ function Home() {
 
       <div className="card-container">
         {todos.map((todoItem) => {
-          const { id, toIteam, priority, emoji, isDone, createdDate } =
+          const { id, toIteam, priority, emoji, isDone, createdDate,note } =
             todoItem;
           return (
             <div className="cards" key={id}>
@@ -58,7 +58,7 @@ function Home() {
                     <h2 className={isDone ? "todo-done" : ""}>
                       {`${id}]`} {toIteam}{emoji}
                     </h2>
-                    <h3>priority = {priority}</h3>
+                    <h3 className="priority">{priority}</h3>
                     <h3 className="see-task-btn">see task</h3>
                   </div>
                 </summary>
@@ -72,6 +72,7 @@ function Home() {
                   checked={isDone}
                   onChange={(e) => markAsChecked(id, e.target.checked)}
                 />
+                <p>{note}</p>
                 <Link to={`edit/${id}`}>Edit </Link>
                 <button onClick={() => deleteItem(id)}>Delete Item</button>
               </details>

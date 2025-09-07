@@ -37,7 +37,6 @@ gap:25PX;
 .todo-done
 {
   text-decoration:line-through;
-  background-color:rgba(0, 128, 0, 0.276);
 }
 .floating-btn
 {
@@ -79,5 +78,14 @@ summary {
   height:20PX;
   width:fit-content;
   padding:6px;
+  border-radius:10px;
+}
+.priority
+{
+  height:20px;
+  width:80px;
+  text-align:center;
+  padding:5px;
+  border:2px solid black;
   border-radius:10px;
 }

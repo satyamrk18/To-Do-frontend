@@ -9,6 +9,7 @@ const Edit = () => {
     priority: "Low",
     emoji: "❤️‍🔥",
     isDone:false,
+    note:"",
   });
   const [emojiPickerOPen, setEmojiPickerOpen] = useState(false);
   const { id } = useParams();
@@ -22,7 +23,8 @@ const loadTodo = async ()=>
         toIteam:idData.toIteam,
         priority:idData.priority,
         emoji:idData.emoji,
-        isDone:idData.isDone
+        isDone:idData.isDone,
+        note:idData.note
     })
 }
 useEffect(()=>{loadTodo()},[id])
@@ -60,6 +62,11 @@ useEffect(()=>{loadTodo()},[id])
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
+        <input input="feedback" value={todos.note} onChange={(e)=>
+          {
+            setTodos({...todos,note:e.target.value});
+          }
+        }/>
         <button
           onClick={() => {
             setEmojiPickerOpen(!emojiPickerOPen);

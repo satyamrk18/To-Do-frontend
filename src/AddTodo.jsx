@@ -7,6 +7,7 @@ const AddTodo = () => {
     toIteam: "",
     priority: "Low",
     emoji: "❤️‍🔥",
+    note: "",
   });
   const [emojiPickerOPen, setEmojiPickerOpen] = useState(false);
 
@@ -33,7 +34,8 @@ const AddTodo = () => {
             setTodos({ ...todos, toIteam: e.target.value });
           }}
         />
-        <select className="inputs"
+        <select
+          className="inputs"
           onChange={(e) => {
             setTodos({ ...todos, priority: e.target.value });
           }}
@@ -43,6 +45,14 @@ const AddTodo = () => {
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
+        <input
+          type="feedback"
+          className="inputs"
+          placeholder="ecter note"
+          onChange={(e) => {
+            setTodos({ ...todos, note: e.target.value });
+          }}
+        />
         <button
           onClick={() => {
             setEmojiPickerOpen(!emojiPickerOPen);
@@ -52,16 +62,16 @@ const AddTodo = () => {
         </button>
         {/* emoji picker */}
         <div className="input-emoji">
-          <EmojiPicker className="emoji-container"
-          height={350}
-          width={`70%`}
+          <EmojiPicker
+            className="emoji-container"
+            height={350}
+            width={`70%`}
             onEmojiClick={({ emoji }) => {
               setTodos({ ...todos, emoji: emoji });
               setEmojiPickerOpen(false);
             }}
             open={emojiPickerOPen}
           />
-          
         </div>
         {/*submit button*/}
         <button
