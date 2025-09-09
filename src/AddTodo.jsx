@@ -48,7 +48,7 @@ const AddTodo = () => {
         <input
           type="feedback"
           className="inputs"
-          placeholder="ecter note"
+          placeholder="enter note"
           onChange={(e) => {
             setTodos({ ...todos, note: e.target.value });
           }}
