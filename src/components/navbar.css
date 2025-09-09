@@ -1,0 +1,24 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.icn {
+  display: flex;
+  gap: 20px;
+}
+.icn-item {
+  cursor: pointer;
+  padding:7px;
+  border:0px solid transparent;
+  transition:all 0.3s;
+  border-radius:50%;
+}
+.icn-item:hover
+{
+    background-color:white;
+    border-radius:50%;
+}

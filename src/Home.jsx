@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
 import AddToDoBox from "./components/addtodoBox.jsx";
+import Navbar from "./components/Navbar.jsx";
+import {MoveRight,Plus} from "lucide-react"
 
 function Home() {
   const [todos, setTodos] = useState([]);
@@ -40,15 +42,20 @@ function Home() {
 
   return (
     <div className="container">
-      <h1>To Do List</h1>
-
+      <Navbar />
+      <h1> Add Your ToDo's Now</h1>
+      <h2>
+        Easily manage your personal tasks, family projects, and team’s work all
+        in one place.
+      </h2>
+      <button className="getStarted-btn">Get Started. it's Free   <MoveRight /> </button>
       <div className="floating-box">
         {showAddToDo && <AddToDoBox onClose={() => setShowAddToDo(false)} />}
       </div>
 
       <div className="card-container">
         {todos.map((todoItem) => {
-          const { id, toIteam, priority, emoji, isDone, createdDate,note } =
+          const { id, toIteam, priority, emoji, isDone, createdDate, note } =
             todoItem;
           return (
             <div className="cards" key={id}>
@@ -56,7 +63,8 @@ function Home() {
                 <summary>
                   <div className="summary-display">
                     <h2 className={isDone ? "todo-done" : ""}>
-                      {`${id}]`} {toIteam}{emoji}
+                      {`${id}]`} {toIteam}
+                      {emoji}
                     </h2>
                     <h3 className="priority">{priority}</h3>
                     <h3 className="see-task-btn">see task</h3>
@@ -82,7 +90,7 @@ function Home() {
       </div>
 
       <button className="floating-btn" onClick={() => setShowAddToDo(true)}>
-        Add Todo
+        Add Todo <Plus />
       </button>
     </div>
   );

@@ -4,8 +4,6 @@ import EditToDo from "./edit.jsx"
 import "./App.css"
 const App = () => {
   return (
-    <div class="container">
-  <div class="teal-glow"></div>
    <div>
        <BrowserRouter>
        <Routes>
@@ -14,8 +12,6 @@ const App = () => {
        </Routes>
        </BrowserRouter>
     </div>
-</div>
-
   );
 };
 export default App;
