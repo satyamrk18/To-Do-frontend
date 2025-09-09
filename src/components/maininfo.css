@@ -1,0 +1,20 @@
+.main-info-container
+{
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+}
+.getStarted-btn {
+  width: fit-content;
+  text-align: center;
+  margin: 25px auto;
+  padding: 10px;
+  font-size: 19px;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  background-color: #74e7d96f;
+}

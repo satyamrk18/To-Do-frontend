@@ -4,7 +4,8 @@ import axios from "axios";
 import "./Home.css";
 import AddToDoBox from "./components/addtodoBox.jsx";
 import Navbar from "./components/Navbar.jsx";
-import {MoveRight,Plus} from "lucide-react"
+import {Plus} from "lucide-react"
+import MainInfo from "./components/mainInfo.jsx";
 
 function Home() {
   const [todos, setTodos] = useState([]);
@@ -43,12 +44,7 @@ function Home() {
   return (
     <div className="container">
       <Navbar />
-      <h1> Add Your ToDo's Now</h1>
-      <h2>
-        Easily manage your personal tasks, family projects, and team’s work all
-        in one place.
-      </h2>
-      <button className="getStarted-btn">Get Started. it's Free   <MoveRight /> </button>
+<MainInfo />
       <div className="floating-box">
         {showAddToDo && <AddToDoBox onClose={() => setShowAddToDo(false)} />}
       </div>
