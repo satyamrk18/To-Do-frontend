@@ -87,3 +87,23 @@ summary {
   border: 2px solid black;
   border-radius: 10px;
 }
+.inner-card
+{
+
+}
+.btn{
+  text-decoration:none;
+  color:black;
+}
+.btns
+{
+padding:10px;
+display:flex;
+align-content:center;
+}
+.mark-as-read
+{
+  display:flex;
+  align-content:center;
+  gap:10px;
+}

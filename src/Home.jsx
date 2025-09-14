@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Home.css";
 import AddToDoBox from "./components/addtodoBox.jsx";
 import Navbar from "./components/Navbar.jsx";
-import {Plus} from "lucide-react"
+import { Plus } from "lucide-react";
 import MainInfo from "./components/mainInfo.jsx";
 
 function Home() {
@@ -44,7 +44,7 @@ function Home() {
   return (
     <div className="container">
       <Navbar />
-<MainInfo />
+      <MainInfo />
       <div className="floating-box">
         {showAddToDo && <AddToDoBox onClose={() => setShowAddToDo(false)} />}
       </div>
@@ -66,19 +66,29 @@ function Home() {
                     <h3 className="see-task-btn">see task</h3>
                   </div>
                 </summary>
+                <div className="inner-card">
+                  <div className="mark-as-read">
+                  <input
+                    type="checkbox"
+                    checked={isDone}
+                    onChange={(e) => markAsChecked(id, e.target.checked)}
+                  />
+                  <p>mark as check </p>
+                  </div>
+                  <p><h2>To Do Description :-</h2> {note}</p>
 
-                <h3>
-                  Created Date {createdDate.replace("T", " ").slice(0, 16)}
-                </h3>
-                <p>mark as check </p>
-                <input
-                  type="checkbox"
-                  checked={isDone}
-                  onChange={(e) => markAsChecked(id, e.target.checked)}
-                />
-                <p>{note}</p>
-                <Link to={`edit/${id}`}>Edit </Link>
-                <button onClick={() => deleteItem(id)}>Delete Item</button>
+                  <h3>
+                    Created Date :- {createdDate.replace("T", " ").slice(0, 16)}
+                  </h3>
+                  <div className="btns">
+                    <button>
+                      <Link to={`edit/${id}`} className="btn">
+                        Edit{" "}
+                      </Link>
+                    </button>
+                    <button onClick={() => deleteItem(id)}>Delete Item</button>
+                  </div>
+                </div>
               </details>
             </div>
           );
