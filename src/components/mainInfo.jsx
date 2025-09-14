@@ -9,7 +9,7 @@ const MainInfo = () => {
         in one place.
       </h2>
       <button className="getStarted-btn">
-        Get Started. it's Free <MoveRight />{" "}
+        Get Started. it's Free <MoveRight />
       </button>
     </div>
   );
